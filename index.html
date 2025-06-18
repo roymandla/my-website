@@ -5,37 +5,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio Roy Mandla</title>
   <style>
+    :root {
+      --bg: #0d0d0d;
+      --primary: #0f0;
+      --text: #e0e0e0;
+      --accent: #333;
+    }
+
     body {
-      background-color: #111;
-      color: #eee;
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
     }
-    h1 {
-      color: #0f0;
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: #000;
+      border-bottom: 1px solid var(--accent);
     }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
     nav a {
-      margin-right: 1rem;
-      color: #0f0;
+      color: var(--text);
       text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .skills, .projects {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border: 1px solid #222;
+      border-radius: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .social {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social a {
+      color: var(--primary);
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid var(--accent);
+      background: #000;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Roy Mandla</h1>
-  <p>Selamat datang di website portofolio saya yang modern dengan tema gelap.</p>
-  <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+
+  <header>
+    <h1>Roy Mandla</h1>
+    <p>Fullstack Developer • UI/UX Enthusiast • Tech Creator</p>
+    <nav>
+      <a href="#tentang">Tentang</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
   <section id="tentang">
     <h2>Tentang Saya</h2>
-    <p>Saya adalah pengembang web dengan fokus pada desain bersih dan fungsionalitas optimal.</p>
+    <p>Saya adalah pengembang web dengan fokus pada pengalaman pengguna dan performa modern. Saya menyukai proses membangun sesuatu dari nol, dari desain hingga deployment.</p>
   </section>
+
+  <section id="keahlian">
+    <h2>Keahlian</h2>
+    <div class="grid skills">
+      <div class="card">HTML5 & CSS3</div>
+      <div class="card">JavaScript / React</div>
+      <div class="card">Tailwind / Bootstrap</div>
+      <div class="card">Node.js & Firebase</div>
+      <div class="card">Git & GitHub</div>
+      <div class="card">UI/UX Design</div>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <h2>Proyek Terbaru</h2>
+    <div class="grid projects">
+      <div class="card">
+        <strong>Landing Page Kopi</strong>
+        <p>Website promosi kedai kopi dengan tampilan elegan dan interaktif.</p>
+      </div>
+      <div class="card">
+        <strong>Aplikasi Tugas</strong>
+        <p>To-do app modern dengan penyimpanan lokal dan antarmuka sederhana.</p>
+      </div>
+      <div class="card">
+        <strong>Portfolio v2</strong>
+        <p>Versi terbaru portofolio pribadi dengan efek dan desain profesional.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="kontak">
     <h2>Kontak</h2>
-    <p>Email: roymandla@email.com</p>
+    <p>Ingin bekerja sama atau berdiskusi? Hubungi saya:</p>
+    <p>Email: <a href="mailto:roymandla@email.com" style="color:#0f0;">roymandla@email.com</a></p>
+    <div class="social">
+      <a href="https://instagram.com/roymandla" target="_blank">📷</a>
+      <a href="https://wa.me/6285298267303" target="_blank">💬</a>
+      <a href="https://github.com/roymandla" target="_blank">🐱</a>
+    </div>
   </section>
+
+  <footer>
+    &copy; 2025 Roy Mandla. Dibuat dengan ❤️ di GitHub Pages.
+  </footer>
+
 </body>
 </html>
