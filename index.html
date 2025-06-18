@@ -6,63 +6,85 @@
   <title>Portofolio Roy Mandla</title>
   <style>
     :root {
-      --bg: #0d0d0d;
-      --primary: #0f0;
-      --text: #e0e0e0;
-      --accent: #333;
+      --bg: #0b0b13;
+      --purple: #8e44ad;
+      --purple-light: #a84be0;
+      --text: #eee;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.7;
     }
 
     header {
-      padding: 60px 20px;
+      padding: 50px 20px;
       text-align: center;
-      background: #000;
-      border-bottom: 1px solid var(--accent);
+      background: linear-gradient(135deg, #1a1a2e, #1f0036);
+      animation: fadeIn 1.5s ease;
     }
 
     header h1 {
       font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+      color: var(--purple-light);
     }
 
     header p {
       font-size: 1.2rem;
-      color: #aaa;
+      color: #ccc;
+      margin-top: 10px;
     }
 
     nav {
-      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 20px 0;
     }
 
     nav a {
       color: var(--text);
       text-decoration: none;
-      margin: 0 10px;
       font-weight: bold;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: var(--purple);
     }
 
     section {
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      animation: fadeInUp 1s ease both;
     }
 
     h2 {
-      border-left: 4px solid var(--primary);
-      padding-left: 12px;
+      font-size: 2rem;
+      color: var(--purple);
       margin-bottom: 20px;
+      border-left: 4px solid var(--purple);
+      padding-left: 10px;
+    }
+
+    .glass {
+      background: var(--glass);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
     }
 
     .grid {
@@ -71,31 +93,23 @@
     }
 
     .skills, .projects {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border: 1px solid #222;
-      border-radius: 10px;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
+    .glass:hover {
+      border-color: var(--purple-light);
       transform: translateY(-5px);
-      border-color: var(--primary);
     }
 
     .social {
-      margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
+      margin-top: 30px;
     }
 
     .social a {
-      color: var(--primary);
+      color: var(--purple-light);
       font-size: 1.5rem;
       text-decoration: none;
     }
@@ -105,14 +119,21 @@
       padding: 30px;
       font-size: 0.9rem;
       color: #666;
-      border-top: 1px solid var(--accent);
-      background: #000;
+      border-top: 1px solid #222;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
+      header h1 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -120,7 +141,7 @@
 
   <header>
     <h1>Roy Mandla</h1>
-    <p>Fullstack Developer • UI/UX Enthusiast • Tech Creator</p>
+    <p>"Code. Coffee. Create."</p>
     <nav>
       <a href="#tentang">Tentang</a>
       <a href="#keahlian">Keahlian</a>
@@ -131,52 +152,56 @@
 
   <section id="tentang">
     <h2>Tentang Saya</h2>
-    <p>Saya adalah pengembang web dengan fokus pada pengalaman pengguna dan performa modern. Saya menyukai proses membangun sesuatu dari nol, dari desain hingga deployment.</p>
+    <div class="glass">
+      <p>Saya adalah developer yang mencintai dunia digital dan desain elegan. Dengan pengalaman dalam web modern, saya membangun solusi kreatif yang tidak hanya fungsional tapi juga memukau secara visual.</p>
+    </div>
   </section>
 
   <section id="keahlian">
     <h2>Keahlian</h2>
     <div class="grid skills">
-      <div class="card">HTML5 & CSS3</div>
-      <div class="card">JavaScript / React</div>
-      <div class="card">Tailwind / Bootstrap</div>
-      <div class="card">Node.js & Firebase</div>
-      <div class="card">Git & GitHub</div>
-      <div class="card">UI/UX Design</div>
+      <div class="glass">HTML5 & CSS3</div>
+      <div class="glass">JavaScript & React</div>
+      <div class="glass">UI/UX Design</div>
+      <div class="glass">Tailwind & Bootstrap</div>
+      <div class="glass">Firebase & Node.js</div>
+      <div class="glass">Git & GitHub</div>
     </div>
   </section>
 
   <section id="proyek">
-    <h2>Proyek Terbaru</h2>
+    <h2>Proyek Unggulan</h2>
     <div class="grid projects">
-      <div class="card">
-        <strong>Landing Page Kopi</strong>
-        <p>Website promosi kedai kopi dengan tampilan elegan dan interaktif.</p>
+      <div class="glass">
+        <strong>Kopi Jeda</strong>
+        <p>Aplikasi pemesanan kopi modern dengan fitur loyalty & desain premium.</p>
       </div>
-      <div class="card">
-        <strong>Aplikasi Tugas</strong>
-        <p>To-do app modern dengan penyimpanan lokal dan antarmuka sederhana.</p>
+      <div class="glass">
+        <strong>Portofolio 2.0</strong>
+        <p>Website pribadi yang elegan, interaktif, dan responsive untuk showcase karya.</p>
       </div>
-      <div class="card">
-        <strong>Portfolio v2</strong>
-        <p>Versi terbaru portofolio pribadi dengan efek dan desain profesional.</p>
+      <div class="glass">
+        <strong>App Tugas Harian</strong>
+        <p>To-do app gelap dengan efek suara, drag & drop, serta penyimpanan otomatis.</p>
       </div>
     </div>
   </section>
 
   <section id="kontak">
     <h2>Kontak</h2>
-    <p>Ingin bekerja sama atau berdiskusi? Hubungi saya:</p>
-    <p>Email: <a href="mailto:roymandla@email.com" style="color:#0f0;">roymandla@email.com</a></p>
-    <div class="social">
-      <a href="https://instagram.com/roymandla" target="_blank">📷</a>
-      <a href="https://wa.me/6285298267303" target="_blank">💬</a>
-      <a href="https://github.com/roymandla" target="_blank">🐱</a>
+    <div class="glass">
+      <p>Ingin kerja sama, diskusi, atau tanya-tanya seputar coding dan desain?</p>
+      <p>Email: <a href="mailto:roymandla@email.com" style="color:#a84be0;">roymandla@email.com</a></p>
+      <div class="social">
+        <a href="https://instagram.com/roymandla" target="_blank">📷</a>
+        <a href="https://wa.me/6285298267303" target="_blank">💬</a>
+        <a href="https://github.com/roymandla" target="_blank">🐱</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Roy Mandla. Dibuat dengan ❤️ di GitHub Pages.
+    &copy; 2025 Roy Mandla. Dark Portfolio Powered by GitHub Pages 💜
   </footer>
 
 </body>
